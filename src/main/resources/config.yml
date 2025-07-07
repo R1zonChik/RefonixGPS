@@ -1,0 +1,46 @@
+# RefonixGPS Configuration
+settings:
+  update-interval: 10 # тики между обновлениями action bar
+  max-distance: 1000 # максимальное расстояние для отслеживания
+
+messages:
+  prefix: "§x§F§F§8§8§0§0§l[GPS]"
+  only-players: "§cТолько для игроков!"
+
+  usage:
+    - "§x§F§F§8§8§0§0§l[GPS] §fИспользование:"
+    - "§x§0§0§F§F§8§8/gps add <игрок> §7- запросить доступ"
+    - "§x§0§0§F§F§8§8/gps remove <игрок> §7- убрать из отслеживания"
+    - "§x§0§0§F§F§8§8/gps list §7- список отслеживаемых"
+    - "§x§0§0§F§F§8§8/gps track <игрок> §7- выбрать для навигации"
+    - "§x§0§0§F§F§8§8/gps toggle §7- вкл/выкл навигацию"
+
+  errors:
+    player-not-found: "§x§F§F§4§4§0§0§l[GPS] §fИгрок не найден!"
+    specify-player: "§x§F§F§4§4§0§0§l[GPS] §fУкажите имя игрока!"
+    cannot-track-self: "§x§F§F§4§4§0§0§l[GPS] §fНельзя отслеживать себя!"
+    no-requests: "§x§F§F§4§4§0§0§l[GPS] §fНет активных запросов!"
+    no-tracking: "§x§F§F§8§8§0§0§l[GPS] §fВы никого не отслеживаете"
+    not-tracking-player: "§x§F§F§4§4§0§0§l[GPS] §fВы не отслеживаете этого игрока!"
+
+  success:
+    request-sent: "§x§0§0§F§F§0§0§l[GPS] §fЗапрос отправлен игроку §e{player}"
+    tracking-allowed: "§x§0§0§F§F§0§0§l[GPS] §fВы разрешили отслеживание для §e{player}"
+    tracking-accepted: "§x§0§0§F§F§0§0§l[GPS] §fИгрок §e{player} §fразрешил отслеживание!"
+    tracking-denied: "§x§F§F§4§4§0§0§l[GPS] §fВы отказались от отслеживания"
+    request-denied: "§x§F§F§4§4§0§0§l[GPS] §fИгрок §e{player} §fотказался от отслеживания"
+    tracking-removed: "§x§F§F§4§4§0§0§l[GPS] §fОтслеживание игрока §e{player} §fотключено"
+    tracking-list: "§x§0§0§F§F§0§0§l[GPS] §fОтслеживаемые игроки:"
+    tracking-item: "§x§F§F§D§D§0§0§l• §e{player} §7- §f{coords}"
+    navigation-enabled: "§x§0§0§F§F§0§0§l[GPS] §fНавигация включена"
+    navigation-disabled: "§x§F§F§4§4§0§0§l[GPS] §fНавигация отключена"
+    now-tracking: "§x§0§0§F§F§0§0§l[GPS] §fТеперь отслеживаете §e{player}"
+
+  request:
+    title: "§x§F§F§D§D§0§0§l[GPS ЗАПРОС]"
+    message: "§fИгрок §e{player} §fхочет отслеживать ваши координаты"
+    accept: "§x§0§0§F§F§0§0§l/gps accept §7- согласиться"
+    deny: "§x§F§F§4§4§0§0§l/gps deny §7- отказаться"
+
+  actionbar:
+    format: "§x§0§0§F§F§0§0§l{player} §f{arrow} §x§F§F§D§D§0§0§l{distance}м"

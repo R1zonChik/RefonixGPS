@@ -1,0 +1,10 @@
+name: RefonixGPS
+version: '1.0'
+main: ru.refontstudio.refonixgps.RefonixGPS
+api-version: '1.16'
+description: "GPS система для отслеживания друзей на РП сервере"
+commands:
+  gps:
+    description: "GPS команды"
+    usage: "/gps <add/remove/list> [игрок]"
+    aliases: ["coords"]
