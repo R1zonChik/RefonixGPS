@@ -1,7 +1,17 @@
 # RefonixGPS Configuration
 settings:
-  update-interval: 10 # тики между обновлениями action bar
-  max-distance: 1000 # максимальное расстояние для отслеживания
+  update-interval: 10
+  max-distance: 1000
+  proximity-distance: 10
+  proximity-sound: true
+  join-notifications: true
+  history-enabled: true
+  history-max-entries: 50
+
+sounds:
+  proximity: "BLOCK_NOTE_BLOCK_PLING"
+  friend-join: "ENTITY_PLAYER_LEVELUP"
+  friend-leave: "BLOCK_NOTE_BLOCK_BASS"
 
 messages:
   prefix: "§x§F§F§8§8§0§0§l[GPS]"
@@ -11,30 +21,45 @@ messages:
     - "§x§F§F§8§8§0§0§l[GPS] §fИспользование:"
     - "§x§0§0§F§F§8§8/gps add <игрок> §7- запросить доступ"
     - "§x§0§0§F§F§8§8/gps remove <игрок> §7- убрать из отслеживания"
-    - "§x§0§0§F§F§8§8/gps list §7- список отслеживаемых"
+    - "§x§0§0§F§F§8§8/gps delete <игрок> §7- удалить себя у игрока"
+    - "§x§0§0§F§F§8§8/gps list §7- список всех друзей"
     - "§x§0§0§F§F§8§8/gps track <игрок> §7- выбрать для навигации"
     - "§x§0§0§F§F§8§8/gps toggle §7- вкл/выкл навигацию"
+    - "§x§0§0§F§F§8§8/gps notifications §7- вкл/выкл уведомления"
+    - "§x§0§0§F§F§8§8/gps history <игрок> §7- история перемещений"
 
   errors:
     player-not-found: "§x§F§F§4§4§0§0§l[GPS] §fИгрок не найден!"
     specify-player: "§x§F§F§4§4§0§0§l[GPS] §fУкажите имя игрока!"
     cannot-track-self: "§x§F§F§4§4§0§0§l[GPS] §fНельзя отслеживать себя!"
     no-requests: "§x§F§F§4§4§0§0§l[GPS] §fНет активных запросов!"
-    no-tracking: "§x§F§F§8§8§0§0§l[GPS] §fВы никого не отслеживаете"
-    not-tracking-player: "§x§F§F§4§4§0§0§l[GPS] §fВы не отслеживаете этого игрока!"
+    no-friends: "§x§F§F§8§8§0§0§l[GPS] §fУ вас нет друзей в GPS"
+    not-tracking-player: "§x§F§F§4§4§0§0§l[GPS] §fВы не можете отслеживать этого игрока!"
+    not-tracked-by-player: "§x§F§F§4§4§0§0§l[GPS] §fЭтот игрок вас не отслеживает!"
+    no-history: "§x§F§F§4§4§0§0§l[GPS] §fИстория перемещений пуста!"
 
   success:
     request-sent: "§x§0§0§F§F§0§0§l[GPS] §fЗапрос отправлен игроку §e{player}"
     tracking-allowed: "§x§0§0§F§F§0§0§l[GPS] §fВы разрешили отслеживание для §e{player}"
     tracking-accepted: "§x§0§0§F§F§0§0§l[GPS] §fИгрок §e{player} §fразрешил отслеживание!"
+    mutual-tracking: "§x§0§0§F§F§0§0§l[GPS] §fТеперь вы можете отслеживать друг друга!"
     tracking-denied: "§x§F§F§4§4§0§0§l[GPS] §fВы отказались от отслеживания"
     request-denied: "§x§F§F§4§4§0§0§l[GPS] §fИгрок §e{player} §fотказался от отслеживания"
     tracking-removed: "§x§F§F§4§4§0§0§l[GPS] §fОтслеживание игрока §e{player} §fотключено"
-    tracking-list: "§x§0§0§F§F§0§0§l[GPS] §fОтслеживаемые игроки:"
-    tracking-item: "§x§F§F§D§D§0§0§l• §e{player} §7- §f{coords}"
+    self-removed: "§x§F§F§4§4§0§0§l[GPS] §fВы удалили себя из списка §e{player}"
+    removed-by-target: "§x§F§F§4§4§0§0§l[GPS] §fИгрок §e{player} §fудалил себя из вашего списка"
+    tracking-list: "§x§0§0§F§F§0§0§l[GPS] §fСписок друзей:"
+    tracking-item: "§x§F§F§D§D§0§0§l• §e{player} §7- §f{coords} §7(отслеживаете)"
+    follower-item: "§x§A§A§F§F§A§A§l• §e{player} §7- §f{coords} §7(отслеживает вас)"
     navigation-enabled: "§x§0§0§F§F§0§0§l[GPS] §fНавигация включена"
     navigation-disabled: "§x§F§F§4§4§0§0§l[GPS] §fНавигация отключена"
     now-tracking: "§x§0§0§F§F§0§0§l[GPS] §fТеперь отслеживаете §e{player}"
+    notifications-enabled: "§x§0§0§F§F§0§0§l[GPS] §fУведомления включены"
+    notifications-disabled: "§x§F§F§4§4§0§0§l[GPS] §fУведомления отключены"
+    friend-online: "§x§0§0§F§F§0§0§l[GPS] §fДруг §e{player} §fзашел в игру!"
+    friend-offline: "§x§F§F§4§4§0§0§l[GPS] §fДруг §e{player} §fвышел из игры!"
+    friend-nearby: "§x§0§0§F§F§0§0§l[GPS] §fВы рядом с §e{player}§f!"
+    history-title: "§x§0§0§F§F§0§0§l[GPS] §fИстория перемещений §e{player}§f:"
 
   request:
     title: "§x§F§F§D§D§0§0§l[GPS ЗАПРОС]"

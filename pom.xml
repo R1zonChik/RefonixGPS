@@ -6,7 +6,7 @@
 
   <groupId>ru.refontstudio</groupId>
   <artifactId>RefonixGPS</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>RefonixGPS</name>
